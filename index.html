@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Portfolio</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Portfolio.</a>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Trang Chủ</a>
+        <a href="#about">Giới Thiệu</a>
+        <a href="#services">Dịch Vụ</a>
+        <a href="#skills">Kỹ Năng</a>
+        <a href="#portfolio">Dự Án</a>
+        <a href="#contact">Liên Hệ</a>
+      </nav>
+
+      <div class="bx bx-moon" id="darkMode-icon"></div>
+
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Xin Chào, Tôi là</h3>
+        <h1><span id="typing-name"></span></h1>
+        <p>
+          Tôi đang làm việc trong lĩnh vực phát triển và thiết kế web. Tôi thích
+          tạo ra những thiết kế web đẹp mắt, trực quan bằng HTML, CSS và làm cho
+          chúng trở nên tương tác bằng JavaScript
+        </p>
+
+        <div class="social-media">
+          <a href="https://www.instagram.com/hthinh.2103/"
+            ><i class="bx bxl-instagram-alt"></i
+          ></a>
+          <a href="https://www.facebook.com/hoangthinhh2103"
+            ><i class="bx bxl-facebook"></i
+          ></a>
+          <a
+            href="https://www.tiktok.com/@dau_hl?is_from_webapp=1&sender_device=pc"
+            ><i class="bx bxl-tiktok"></i
+          ></a>
+          <a href="https://github.com/thinhtrum117"
+            ><i class="bx bxl-github"></i
+          ></a>
+        </div>
+
+        <a href="#" class="btn">Download CV</a>
+      </div>
+
+      <div class="profession-container">
+        <div class="profession-box">
+          <div class="profession" style="--i: 0">
+            <i class="bx bx-code-alt"></i>
+            <h3>Web Developer</h3>
+          </div>
+          <div class="profession" style="--i: 1">
+            <i class="bx bx-code"></i>
+            <h3>Software Developer</h3>
+          </div>
+          <div class="profession" style="--i: 2">
+            <i class="bx bx-palette"></i>
+            <h3>Canva Designer</h3>
+          </div>
+          <div class="profession" style="--i: 3">
+            <i class="bx bx-video-recording"></i>
+            <h3>Video Editor</h3>
+          </div>
+
+          <div class="circle"></div>
+        </div>
+
+        <div class="overlay"></div>
+      </div>
+
+      <div class="intro-image-right">
+        <img src="/portfolio.png" alt="Ảnh của bạn" />
+        <span class="circle-animation"></span>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="/smith.jpg" alt="" />
+      </div>
+
+      <div class="about-content">
+        <h2 class="heading">Về <span>Hoàng Trọng Thịnh</span></h2>
+        <div class="introduction-section">
+          <h2 class="intro-title">GIỚI THIỆU</h2>
+
+          <div class="intro-buttons">
+            <button
+              class="intro-tab active"
+              onclick="showContent('personal', this)"
+            >
+              👤 Thông tin cá nhân
+            </button>
+            <button class="intro-tab" onclick="showContent('career', this)">
+              💼 Định Hướng Nghề Nghiệp
+            </button>
+            <button class="intro-tab" onclick="showContent('hobbies', this)">
+              🧩 Sở thích
+            </button>
+          </div>
+
+          <div class="intro-content-display">
+            <div id="personal" class="content active">
+              Hiện tại tôi là sinh viên năm hai chuyên ngành Công Nghệ Thông
+              Tin, Trường Đại học Giao thông vận tải TP. HCM. Tôi luôn hướng tới
+              sự năng động, không ngừng tìm kiếm những kiến thức mới mẻ và có
+              niềm yêu thích đặc biệt dành cho lĩnh vực công nghệ. Thông qua
+              từng dự án thực tế, tôi nỗ lực học hỏi, phát triển bản thân và
+              tích lũy kinh nghiệm để hoàn thiện hơn từng ngày.
+            </div>
+            <div id="career" class="content">
+              Tôi định hướng trở thành một kỹ sư phần mềm có nền tảng vững chắc
+              về phát triển hệ thống và bảo mật thông tin. Bên cạnh việc nâng
+              cao kỹ năng lập trình, tôi đặc biệt quan tâm đến lĩnh vực an toàn
+              thông tin – nơi đòi hỏi sự cẩn trọng, phân tích và giải quyết vấn
+              đề một cách hệ thống. Tôi mong muốn xây dựng các giải pháp phần
+              mềm không chỉ tối ưu hiệu suất mà còn đảm bảo tính bảo mật và tin
+              cậy trong môi trường công nghệ số ngày nay.
+            </div>
+            <div id="hobbies" class="content">
+              Tôi dành thời gian rảnh để xem phim, nghe nhạc và khám phá những
+              xu hướng công nghệ mới. Việc theo dõi sự phát triển của công nghệ
+              không chỉ là đam mê mà còn giúp tôi mở rộng kiến thức và truyền
+              cảm hứng cho con đường học tập của mình.
+            </div>
+          </div>
+        </div>
+
+        <a href="#" class="btn">Read More</a>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <h2 class="heading">Dịch Vụ <span>Của Tôi</span></h2>
+
+      <div class="services-container">
+        <div class="services-box">
+          <i class="bx bx-code-alt"></i>
+          <h3>Phát triển web</h3>
+          <p>
+            Tôi nhận thiết kế website cá nhân, doanh nghiệp, landing page với
+            giao diện hiện đại, chuẩn SEO, tương thích mọi thiết bị. Đảm bảo tốc
+            độ tải nhanh, bảo mật tốt và dễ dàng quản trị cho khách hàng.
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+        <div class="services-box">
+          <i class="bx bxs-paint"></i>
+          <h3>Thiết kế Canva</h3>
+          <p>
+            Sáng tạo poster, banner, bài đăng mạng xã hội và ấn phẩm quảng cáo
+            bằng Canva với phong cách trẻ trung, độc đáo, giúp bạn nổi bật giữa
+            đám đông và truyền tải thông điệp một cách hiệu quả nhất.
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+        <div class="services-box">
+          <i class="bx bx-bar-chart-alt"></i>
+          <h3>Chỉnh sửa video</h3>
+          <p>
+            Cắt ghép, dựng và biên tập video theo yêu cầu cho các dự án cá nhân,
+            học tập hoặc truyền thông. Đảm bảo hình ảnh sắc nét, hiệu ứng sinh
+            động, phù hợp nội dung và đúng thời lượng mong muốn.
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <div class="max-width">
+        <div class="skills-title">
+          <h2>Kĩ Năng Của Tôi</h2>
+          <div class="subtitle">
+            <span class="line"></span>
+            <span class="what-i-know">what i know</span>
+            <span class="line"></span>
+          </div>
+        </div>
+        <div class="skills-content">
+          <div class="column left">
+            <div class="text">Kỹ năng và kinh nghiệm chuyên môn.</div>
+            <p>
+              Thành thạo các công nghệ như HTML, CSS, JavaScript, ReactJs và
+              MySQL, tôi có khả năng xây dựng website hiện đại, tối ưu hiệu suất
+              và dễ dàng bảo trì. Kinh nghiệm phối hợp với các nhóm phát triển,
+              cùng kỹ năng giao tiếp tốt giúp tôi hoàn thành công việc đúng tiến
+              độ và đạt chất lượng cao.
+            </p>
+            <a href="#">Know more !</a>
+          </div>
+          <div class="column right">
+            <div class="bars">
+              <div class="info">
+                <span>HTML</span>
+                <span>60%</span>
+              </div>
+              <div class="line html"></div>
+            </div>
+            <div class="bars">
+              <div class="info">
+                <span>CSS</span>
+                <span>60%</span>
+              </div>
+              <div class="line css"></div>
+            </div>
+            <div class="bars">
+              <div class="info">
+                <span>JavaScript</span>
+                <span>50%</span>
+              </div>
+              <div class="line js"></div>
+            </div>
+            <div class="bars">
+              <div class="info">
+                <span>React.Js</span>
+                <span>30%</span>
+              </div>
+              <div class="line react"></div>
+            </div>
+            <div class="bars">
+              <div class="info">
+                <span>MySQL</span>
+                <span>50%</span>
+              </div>
+              <div class="line mysql"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Dự Án <span>Gần Nhất</span></h2>
+
+      <div class="portfolio-container">
+        <div class="portfolio-box">
+          <img src="pf1.png" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>Portfolio</h4>
+            <p>Đây là một dự án về portfolio của tôi.</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="plants.png" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>Plants</h4>
+            <p>
+              Dự án thiết kế website về cây cảnh – nơi chia sẻ kiến thức, kinh
+              nghiệm và cảm hứng trồng cây.
+            </p>
+            <a href="https://github.com/thinhtrum117/Tree"
+              ><i class="bx bx-link-external"></i
+            ></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="movies.png" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>Movies</h4>
+            <p>
+              Dự án website quản lý, tìm kiếm và xem trailer các bộ phim hấp
+              dẫn.
+            </p>
+            <a href="https://github.com/thinhtrum117/Movies"
+              ><i class="bx bx-link-external"></i
+            ></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="pf2.png" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>Portfolio</h4>
+            <p>
+              Portfolio cá nhân – nơi lưu giữ, trình bày và chia sẻ thành tựu
+              cùng các sản phẩm đã thực hiện.
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="restaurent.png" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>Restaurent</h4>
+            <p>
+              Dự án website nhà hàng – nơi trải nghiệm ẩm thực trực tuyến, đặt
+              bàn nhanh chóng và quản lý thực đơn hiệu quả.
+            </p>
+            <a href="https://github.com/thinhtrum117/Restaurants"
+              ><i class="bx bx-link-external"></i
+            ></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="ecom.png" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>Ecom</h4>
+            <p>
+              Dự án website mua sắm online – quản lý sản phẩm hiệu quả, tối ưu
+              trải nghiệm khách hàng.
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="max-width">
+        <h2 class="title">Contact me</h2>
+        <div class="contact-content">
+          <div class="column left">
+            <div class="text">Liên hệ</div>
+            <p>
+              Nếu bạn có bất kỳ câu hỏi, góp ý hay cơ hội hợp tác nào, hãy gửi
+              cho mình thông tin qua form bên cạnh hoặc email bên dưới.
+            </p>
+            <div class="icons">
+              <div class="row">
+                <i class="fas fa-user"></i>
+                <div class="info">
+                  <div class="head">Name</div>
+                  <div class="sub-title">Hoàng Trọng Thịnh</div>
+                </div>
+              </div>
+              <div class="row">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="info">
+                  <div class="head">Address</div>
+                  <div class="sub-title">Thành Phố Hồ Chí Minh</div>
+                </div>
+              </div>
+              <div class="row">
+                <i class="fas fa-envelope"></i>
+                <div class="info">
+                  <div class="head">Email</div>
+                  <div class="sub-title">thinhht0711@ut.edu.vn</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column right">
+            <div class="text">Nhắn tin cho tôi</div>
+            <form>
+              <div class="fields">
+                <div class="field name">
+                  <input type="text" placeholder="Name" required />
+                </div>
+                <div class="field email">
+                  <input type="email" placeholder="Email" required />
+                </div>
+              </div>
+              <div class="field">
+                <input type="text" placeholder="Subject" required />
+              </div>
+              <div class="field textarea">
+                <textarea
+                  cols="30"
+                  rows="5"
+                  placeholder="Message.."
+                  required
+                ></textarea>
+              </div>
+              <div class="button-area">
+                <button type="submit">Send message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Hoang Thinh 2025 All Rights Reserved.</p>
+      </div>
+
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
