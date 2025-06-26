@@ -22,6 +22,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
   </head>
+<canvas id="snow-canvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:199;"></canvas>
 
   <body>
     <header class="header">
@@ -162,31 +163,56 @@
 
           <div class="intro-content-display">
             <div id="personal" class="content active">
-              <ul style="list-style: disc; padding-left: 1.5rem;">
+              <ul style="list-style: disc; padding-left: 1.5rem">
                 <li><strong>Họ tên:</strong> Hoàng Trọng Thịnh</li>
                 <li><strong>Năm sinh:</strong> 21-03-2005</li>
                 <li><strong>Quê quán:</strong> Bình Phước</li>
-                <li>Hiện tại tôi là sinh viên năm hai chuyên ngành Công Nghệ Thông
-                Tin, Trường Đại học Giao thông vận tải TP. HCM.</li>
-                <li>Tôi luôn hướng tới sự năng động, không ngừng tìm kiếm những
-                kiến thức mới mẻ và có niềm yêu thích đặc biệt dành cho lĩnh vực
-                công nghệ.</li>
-                <li>Thông qua từng dự án thực tế, tôi nỗ lực học hỏi, phát triển
-                bản thân và tích lũy kinh nghiệm để hoàn thiện hơn từng ngày.</li>
+                <li>
+                  Hiện tại tôi là sinh viên năm hai chuyên ngành Công Nghệ Thông
+                  Tin, Trường Đại học Giao thông vận tải TP. HCM.
+                </li>
+                <li>
+                  Tôi luôn hướng tới sự năng động, không ngừng tìm kiếm những
+                  kiến thức mới mẻ và có niềm yêu thích đặc biệt dành cho lĩnh
+                  vực công nghệ.
+                </li>
+                <li>
+                  Thông qua từng dự án thực tế, tôi nỗ lực học hỏi, phát triển
+                  bản thân và tích lũy kinh nghiệm để hoàn thiện hơn từng ngày.
+                </li>
               </ul>
             </div>
             <div id="career" class="content">
-              <ul style="list-style: disc; padding-left: 1.5rem;">
-                <li>Tôi định hướng trở thành một kỹ sư phần mềm có nền tảng vững chắc về phát triển hệ thống và bảo mật thông tin.</li>
-                <li>Bên cạnh việc nâng cao kỹ năng lập trình, tôi đặc biệt quan tâm đến lĩnh vực an toàn thông tin – nơi đòi hỏi sự cẩn trọng, phân tích và giải quyết vấn đề một cách hệ thống.</li>
-                <li>Tôi mong muốn xây dựng các giải pháp phần mềm không chỉ tối ưu hiệu suất mà còn đảm bảo tính bảo mật và tin cậy trong môi trường công nghệ số ngày nay.</li>
+              <ul style="list-style: disc; padding-left: 1.5rem">
+                <li>
+                  Tôi định hướng trở thành một kỹ sư phần mềm có nền tảng vững
+                  chắc về phát triển hệ thống và bảo mật thông tin.
+                </li>
+                <li>
+                  Bên cạnh việc nâng cao kỹ năng lập trình, tôi đặc biệt quan
+                  tâm đến lĩnh vực an toàn thông tin – nơi đòi hỏi sự cẩn trọng,
+                  phân tích và giải quyết vấn đề một cách hệ thống.
+                </li>
+                <li>
+                  Tôi mong muốn xây dựng các giải pháp phần mềm không chỉ tối ưu
+                  hiệu suất mà còn đảm bảo tính bảo mật và tin cậy trong môi
+                  trường công nghệ số ngày nay.
+                </li>
               </ul>
             </div>
             <div id="hobbies" class="content">
-              <ul style="list-style: disc; padding-left: 1.5rem;">
-                <li>Xem phim, nghe nhạc và khám phá những xu hướng công nghệ mới.</li>
-                <li>Việc theo dõi sự phát triển của công nghệ không chỉ là đam mê mà còn giúp tôi mở rộng kiến thức.</li>
-                <li>Những trải nghiệm này truyền cảm hứng cho con đường học tập và phát triển bản thân của tôi.</li>
+              <ul style="list-style: disc; padding-left: 1.5rem">
+                <li>
+                  Xem phim, nghe nhạc và khám phá những xu hướng công nghệ mới.
+                </li>
+                <li>
+                  Việc theo dõi sự phát triển của công nghệ không chỉ là đam mê
+                  mà còn giúp tôi mở rộng kiến thức.
+                </li>
+                <li>
+                  Những trải nghiệm này truyền cảm hứng cho con đường học tập và
+                  phát triển bản thân của tôi.
+                </li>
               </ul>
             </div>
           </div>
@@ -346,7 +372,9 @@
               Portfolio cá nhân – nơi lưu giữ, trình bày và chia sẻ thành tựu
               cùng các sản phẩm đã thực hiện.
             </p>
-            <a href="https://github.com/thinhtrum117/Portfolioo"><i class="bx bx-link-external"></i></a>
+            <a href="https://github.com/thinhtrum117/Portfolioo"
+              ><i class="bx bx-link-external"></i
+            ></a>
           </div>
         </div>
         <div class="portfolio-box">
@@ -372,7 +400,9 @@
               Dự án website mua sắm online – quản lý sản phẩm hiệu quả, tối ưu
               trải nghiệm khách hàng.
             </p>
-            <a href="https://github.com/thinhtrum117/Portfolioo"><i class="bx bx-link-external"></i></a>
+            <a href="https://github.com/thinhtrum117/Portfolioo"
+              ><i class="bx bx-link-external"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -458,5 +488,79 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <script src="script.js"></script>
+    <script>
+(function() {
+  const canvas = document.getElementById('snow-canvas');
+  const ctx = canvas.getContext('2d');
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+
+  // Resize canvas khi window thay đổi kích thước
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  // Tạo mảng tuyết
+  const snowflakes = [];
+  const snowCount = Math.floor(width / 8); // Tùy chỉnh số lượng bông tuyết theo màn hình
+
+  function randomBetween(a, b) {
+    return a + Math.random() * (b - a);
+  }
+
+  function createSnow() {
+    for (let i = 0; i < snowCount; i++) {
+      snowflakes.push({
+        x: randomBetween(0, width),
+        y: randomBetween(-height, height),
+        r: randomBetween(1.3, 4),
+        speed: randomBetween(1.2, 2.9),
+        drift: randomBetween(-1, 1),
+        opacity: randomBetween(0.5, 1)
+      });
+    }
+  }
+
+  createSnow();
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.save();
+    ctx.shadowColor = 'rgba(220,220,255,0.7)';
+    ctx.shadowBlur = 8;
+    for (const flake of snowflakes) {
+      ctx.beginPath();
+      ctx.arc(flake.x, flake.y, flake.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,255,255,${flake.opacity})`;
+      ctx.fill();
+    }
+    ctx.restore();
+    update();
+    requestAnimationFrame(draw);
+  }
+
+  function update() {
+    for (const flake of snowflakes) {
+      flake.y += flake.speed;
+      flake.x += flake.drift;
+      if (flake.y > height + 5) {
+        flake.y = randomBetween(-10, -flake.r);
+        flake.x = randomBetween(0, width);
+      }
+      if (flake.x < -5 || flake.x > width + 5) {
+        flake.x = randomBetween(0, width);
+        flake.y = randomBetween(-10, height);
+      }
+    }
+  }
+
+  draw();
+})();
+</script>
   </body>
 </html>
