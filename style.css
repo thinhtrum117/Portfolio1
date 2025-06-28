@@ -2356,21 +2356,3 @@ body.dark-mode .home .profession-box .profession {
   pointer-events: none;
   z-index: 0;
 }
-body.dark-mode .footer {
-  background: #19171d;
-  box-shadow: 0 -2px 16px #000a;
-}
-body.dark-mode .footer-text p {
-  color: #fff;
-  text-shadow: 0 2px 12px #ffb19933, 0 1px 8px #000a;
-}
-body.dark-mode .footer-iconTop a {
-  background: linear-gradient(120deg, #232323 60%, #553e3e 100%);
-  color: #ffb199;
-  box-shadow: 0 2px 16px #000a;
-}
-body.dark-mode .footer-iconTop a:hover {
-  background: linear-gradient(120deg, #ff8a65 60%, #ffb199 100%);
-  color: #fff;
-  box-shadow: 0 8px 32px #ffb19977;
-}
