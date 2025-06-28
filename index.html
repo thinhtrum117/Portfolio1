@@ -22,53 +22,54 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
   </head>
-  <canvas
-    id="snow-canvas"
-    style="
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 199;
-    "
-  ></canvas>
-
+  <!-- Particle Background Canvas -->
   <body>
+    <canvas
+      id="particle-bg"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 0;
+      "
+    ></canvas>
+
+    <div class="background-blobs">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+      <div class="blob blob3"></div>
+    </div>
+
     <header class="header">
       <div
         class="lang-switcher"
         id="lang-toggle"
-        style="position: absolute; left: 18rem; top: 2rem; z-index: 200"
+        style="
+          position: absolute;
+          left: 18rem;
+          top: 2rem;
+          z-index: 200;
+          display: flex;
+          align-items: center;
+        "
       >
-        <button
+        <label
+          for="lang-select"
           style="
-            padding: 0.5rem 1.2rem;
-            border-radius: 8px;
-            border: none;
-            background: var(--main-color);
-            color: #fff;
             font-weight: 600;
-            cursor: pointer;
-            margin-right: 0.5rem;
-          "
-        >
-          EN
-        </button>
-        <button
-          style="
-            padding: 0.5rem 1.2rem;
-            border-radius: 8px;
-            border: none;
-            background: #eee;
             color: var(--main-color);
-            font-weight: 600;
-            cursor: pointer;
+            margin-right: 8px;
+            font-size: 1.1rem;
           "
+          >Language:</label
         >
-          VI
-        </button>
+        <select id="lang-select" class="lang-select">
+          <option value="en" selected>English (EN)</option>
+          <option value="vi">Tiếng Việt (VI)</option>
+        </select>
       </div>
 
       <a href="#" class="logo">Portfolio.</a>
@@ -283,13 +284,6 @@
         <div class="skills-content">
           <div class="column left">
             <div class="text">Kỹ năng và kinh nghiệm chuyên môn.</div>
-            <p>
-              Thành thạo các công nghệ như HTML, CSS, JavaScript, ReactJs và
-              MySQL, tôi có khả năng xây dựng website hiện đại, tối ưu hiệu suất
-              và dễ dàng bảo trì. Kinh nghiệm phối hợp với các nhóm phát triển,
-              cùng kỹ năng giao tiếp tốt giúp tôi hoàn thành công việc đúng tiến
-              độ và đạt chất lượng cao.
-            </p>
             <a href="#">Know more !</a>
           </div>
           <div class="column right">
@@ -622,6 +616,313 @@
 
         draw();
       })();
+    </script>
+    <script>
+      // Language data
+      const translations = {
+        en: {
+          menu: ["Home", "About", "Services", "Skills", "Portfolio", "Contact"],
+          greeting: "Hello, I am",
+          intro:
+            "I am working in web development and design. I love creating beautiful, intuitive web designs with HTML, CSS, and making them interactive with JavaScript.",
+          downloadCV: "Download CV",
+          aboutHeading: "About <span>Hoang Trong Thinh</span>",
+          aboutIntro: "INTRODUCTION",
+          aboutTabs: [
+            "👤 Personal Info",
+            "💼 Career Orientation",
+            "🧩 Hobbies",
+          ],
+          aboutPersonal: [
+            "<strong>Name:</strong> Hoang Trong Thinh",
+            "<strong>Birthdate:</strong> 21-03-2005",
+            "<strong>Hometown:</strong> Binh Phuoc",
+            "Currently a second-year student majoring in Information Technology at Ho Chi Minh City University of Transport.",
+            "I always strive to be dynamic, constantly seeking new knowledge and have a special passion for technology.",
+            "Through each real project, I strive to learn, develop myself, and gain experience to improve every day.",
+          ],
+          aboutCareer: [
+            "I aim to become a software engineer with a solid foundation in system development and information security.",
+            "In addition to improving programming skills, I am particularly interested in information security – which requires carefulness, analysis, and systematic problem-solving.",
+            "I want to build software solutions that are not only optimized for performance but also secure and reliable in today's digital environment.",
+          ],
+          aboutHobbies: [
+            "Watching movies, listening to music, and exploring new technology trends.",
+            "Following technology development is not only a passion but also helps me expand my knowledge.",
+            "These experiences inspire my learning and personal development journey.",
+          ],
+          aboutReadMore: "Read More",
+          servicesHeading: "My <span>Services</span>",
+          services: [
+            {
+              title: "Web Development",
+              desc: "I design personal, business, and landing page websites with modern, SEO-friendly interfaces, compatible with all devices. Fast loading, secure, and easy to manage.",
+            },
+            {
+              title: "Canva Design",
+              desc: "Creative posters, banners, social media posts, and advertising materials with a youthful, unique style, helping you stand out and deliver your message effectively.",
+            },
+            {
+              title: "Video Editing",
+              desc: "Cutting, editing, and producing videos as required for personal, study, or media projects. Ensuring sharp images, vivid effects, suitable content, and desired duration.",
+            },
+          ],
+          servicesReadMore: "Read More",
+          skillsTitle: "My Skills",
+          skillsSubtitle: "what i know",
+          skillsDesc:
+            "Proficient in HTML, CSS, JavaScript, ReactJs, and MySQL, I can build modern, high-performance, and maintainable websites. Experience collaborating with development teams and good communication skills help me complete work on time and with high quality.",
+          skillsKnowMore: "Know more !",
+          portfolioHeading: "Latest <span>Projects</span>",
+          portfolio: [
+            {
+              title: "Portfolio",
+              desc: "This is my portfolio project.",
+            },
+            {
+              title: "Plants",
+              desc: "A website project about ornamental plants – sharing knowledge, experience, and inspiration for planting.",
+            },
+            {
+              title: "Movies",
+              desc: "A website project for managing, searching, and watching movie trailers.",
+            },
+            {
+              title: "Portfolio",
+              desc: "Personal portfolio – a place to store, present, and share achievements and completed products.",
+            },
+            {
+              title: "Restaurent",
+              desc: "Restaurant website project – online culinary experience, quick table booking, and efficient menu management.",
+            },
+            {
+              title: "Ecom",
+              desc: "Online shopping website project – effective product management, optimized customer experience.",
+            },
+          ],
+          contactTitle: "Contact me",
+          contactLeftTitle: "Contact",
+          contactDesc:
+            "If you have any questions, suggestions, or cooperation opportunities, please send me your information via the form or email below.",
+          contactName: "Name",
+          contactAddress: "Address",
+          contactEmail: "Email",
+          contactCity: "Ho Chi Minh City",
+          contactFormTitle: "Message me",
+          contactForm: {
+            name: "Name",
+            email: "Email",
+            subject: "Subject",
+            message: "Message..",
+            send: "Send message",
+          },
+          footer: "Hoang Thinh 2025 All Rights Reserved.",
+        },
+        vi: {
+          menu: [
+            "Trang Chủ",
+            "Giới Thiệu",
+            "Dịch Vụ",
+            "Kỹ Năng",
+            "Dự Án",
+            "Liên Hệ",
+          ],
+          greeting: "Xin Chào, Tôi là",
+          intro:
+            "Tôi đang làm việc trong lĩnh vực phát triển và thiết kế web. Tôi thích tạo ra những thiết kế web đẹp mắt, trực quan bằng HTML, CSS và làm cho chúng trở nên tương tác bằng JavaScript",
+          downloadCV: "Download CV",
+          aboutHeading: "Về <span>Hoàng Trọng Thịnh</span>",
+          aboutIntro: "GIỚI THIỆU",
+          aboutTabs: [
+            "👤 Thông tin cá nhân",
+            "💼 Định Hướng Nghề Nghiệp",
+            "🧩 Sở thích",
+          ],
+          aboutPersonal: [
+            "<strong>Họ tên:</strong> Hoàng Trọng Thịnh",
+            "<strong>Năm sinh:</strong> 21-03-2005",
+            "<strong>Quê quán:</strong> Bình Phước",
+            "Hiện tại tôi là sinh viên năm hai chuyên ngành Công Nghệ Thông Tin, Trường Đại học Giao thông vận tải TP. HCM.",
+            "Tôi luôn hướng tới sự năng động, không ngừng tìm kiếm những kiến thức mới mẻ và có niềm yêu thích đặc biệt dành cho lĩnh vực công nghệ.",
+            "Thông qua từng dự án thực tế, tôi nỗ lực học hỏi, phát triển bản thân và tích lũy kinh nghiệm để hoàn thiện hơn từng ngày.",
+          ],
+          aboutCareer: [
+            "Tôi định hướng trở thành một kỹ sư phần mềm có nền tảng vững chắc về phát triển hệ thống và bảo mật thông tin.",
+            "Bên cạnh việc nâng cao kỹ năng lập trình, tôi đặc biệt quan tâm đến lĩnh vực an toàn thông tin – nơi đòi hỏi sự cẩn trọng, phân tích và giải quyết vấn đề một cách hệ thống.",
+            "Tôi mong muốn xây dựng các giải pháp phần mềm không chỉ tối ưu hiệu suất mà còn đảm bảo tính bảo mật và tin cậy trong môi trường công nghệ số ngày nay.",
+          ],
+          aboutHobbies: [
+            "Xem phim, nghe nhạc và khám phá những xu hướng công nghệ mới.",
+            "Việc theo dõi sự phát triển của công nghệ không chỉ là đam mê mà còn giúp tôi mở rộng kiến thức.",
+            "Những trải nghiệm này truyền cảm hứng cho con đường học tập và phát triển bản thân của tôi.",
+          ],
+          aboutReadMore: "Đọc Thêm",
+          servicesHeading: "Dịch Vụ <span>Của Tôi</span>",
+          services: [
+            {
+              title: "Phát triển web",
+              desc: "Tôi nhận thiết kế website cá nhân, doanh nghiệp, landing page với giao diện hiện đại, chuẩn SEO, tương thích mọi thiết bị. Đảm bảo tốc độ tải nhanh, bảo mật tốt và dễ dàng quản trị cho khách hàng.",
+            },
+            {
+              title: "Thiết kế Canva",
+              desc: "Sáng tạo poster, banner, bài đăng mạng xã hội và ấn phẩm quảng cáo bằng Canva với phong cách trẻ trung, độc đáo, giúp bạn nổi bật giữa đám đông và truyền tải thông điệp một cách hiệu quả nhất.",
+            },
+            {
+              title: "Chỉnh sửa video",
+              desc: "Cắt ghép, dựng và biên tập video theo yêu cầu cho các dự án cá nhân, học tập hoặc truyền thông. Đảm bảo hình ảnh sắc nét, hiệu ứng sinh động, phù hợp nội dung và đúng thời lượng mong muốn.",
+            },
+          ],
+          servicesReadMore: "Đọc Thêm",
+          skillsTitle: "Kĩ Năng Của Tôi",
+          skillsSubtitle: "what i know",
+          skillsDesc:
+            "Thành thạo các công nghệ như HTML, CSS, JavaScript, ReactJs và MySQL, tôi có khả năng xây dựng website hiện đại, tối ưu hiệu suất và dễ dàng bảo trì. Kinh nghiệm phối hợp với các nhóm phát triển, cùng kỹ năng giao tiếp tốt giúp tôi hoàn thành công việc đúng tiến độ và đạt chất lượng cao.",
+          skillsKnowMore: "Tìm hiểu thêm !",
+          portfolioHeading: "Dự Án <span>Gần Nhất</span>",
+          portfolio: [
+            {
+              title: "Portfolio",
+              desc: "Đây là một dự án về portfolio của tôi.",
+            },
+            {
+              title: "Plants",
+              desc: "Dự án thiết kế website về cây cảnh – nơi chia sẻ kiến thức, kinh nghiệm và cảm hứng trồng cây.",
+            },
+            {
+              title: "Movies",
+              desc: "Dự án website quản lý, tìm kiếm và xem trailer các bộ phim hấp dẫn.",
+            },
+            {
+              title: "Portfolio",
+              desc: "Portfolio cá nhân – nơi lưu giữ, trình bày và chia sẻ thành tựu cùng các sản phẩm đã thực hiện.",
+            },
+            {
+              title: "Restaurent",
+              desc: "Dự án website nhà hàng – nơi trải nghiệm ẩm thực trực tuyến, đặt bàn nhanh chóng và quản lý thực đơn hiệu quả.",
+            },
+            {
+              title: "Ecom",
+              desc: "Dự án website mua sắm online – quản lý sản phẩm hiệu quả, tối ưu trải nghiệm khách hàng.",
+            },
+          ],
+          contactTitle: "Liên hệ",
+          contactLeftTitle: "Liên hệ",
+          contactDesc:
+            "Nếu bạn có bất kỳ câu hỏi, góp ý hay cơ hội hợp tác nào, hãy gửi cho mình thông tin qua form bên cạnh hoặc email bên dưới.",
+          contactName: "Họ tên",
+          contactAddress: "Địa chỉ",
+          contactEmail: "Email",
+          contactCity: "Thành Phố Hồ Chí Minh",
+          contactFormTitle: "Nhắn tin cho tôi",
+          contactForm: {
+            name: "Họ tên",
+            email: "Email",
+            subject: "Chủ đề",
+            message: "Nội dung...",
+            send: "Gửi tin nhắn",
+          },
+          footer: "Hoang Thinh 2025 All Rights Reserved.",
+        },
+      };
+
+      // Helper to update text content
+      function setText(selector, value, isHTML = false) {
+        const el = document.querySelector(selector);
+        if (el) {
+          if (isHTML) el.innerHTML = value;
+          else el.textContent = value;
+        }
+      }
+
+      function setAllText(selector, values) {
+        const els = document.querySelectorAll(selector);
+        els.forEach((el, i) => {
+          if (values[i]) el.textContent = values[i];
+        });
+      }
+
+      function switchLanguage(lang) {
+        const t = translations[lang];
+        // Navbar
+        setAllText(".navbar a", t.menu);
+        // Home
+        setText(".home-content h3", t.greeting);
+        setText(".home-content p", t.intro);
+        setText(".home-content .btn", t.downloadCV);
+        // About
+        setText(".about-content .heading", t.aboutHeading, true);
+        setText(".intro-title", t.aboutIntro);
+        setAllText(".intro-tab", t.aboutTabs);
+        // About content
+        const aboutContents = ["personal", "career", "hobbies"];
+        aboutContents.forEach((id, idx) => {
+          const ul = document.querySelector(`#${id} ul`);
+          if (ul) {
+            ul.innerHTML = t[`about${id.charAt(0).toUpperCase() + id.slice(1)}`]
+              .map((li) => `<li>${li}</li>`)
+              .join("");
+          }
+        });
+        setText(".about-content .btn", t.aboutReadMore);
+        // Services
+        setText(".services .heading", t.servicesHeading, true);
+        const serviceBoxes = document.querySelectorAll(".services-box");
+        t.services.forEach((s, i) => {
+          if (serviceBoxes[i]) {
+            setText(".services-box h3", s.title, false);
+            setText(".services-box p", s.desc, false);
+            setText(".services-box .btn", t.servicesReadMore, false);
+          }
+        });
+        // Skills
+        setText(".skills-title h2", t.skillsTitle);
+        setText(".skills-title .what-i-know", t.skillsSubtitle);
+        setText(".skills-content .left .text", t.skillsDesc);
+        setText(".skills-content .left a", t.skillsKnowMore);
+        // Portfolio
+        setText(".portfolio .heading", t.portfolioHeading, true);
+        const portfolioBoxes = document.querySelectorAll(".portfolio-box");
+        t.portfolio.forEach((p, i) => {
+          if (portfolioBoxes[i]) {
+            setText(".portfolio-layer h4", p.title, false);
+            setText(".portfolio-layer p", p.desc, false);
+          }
+        });
+        // Contact
+        setText(".contact .title", t.contactTitle);
+        setText(".contact-content .left .text", t.contactLeftTitle);
+        setText(".contact-content .left p", t.contactDesc);
+        setText(".contact-content .row .head", t.contactName);
+        setText(".contact-content .row .sub-title", t.contactCity);
+        setText(".contact-content .row .head + .sub-title", t.contactAddress);
+        setText(
+          ".contact-content .row .head + .sub-title + .sub-title",
+          t.contactEmail
+        );
+        setText(".contact-content .right .text", t.contactFormTitle);
+        // Contact form
+        const form = document.querySelector(".contact-content form");
+        if (form) {
+          const inputs = form.querySelectorAll("input, textarea, button");
+          if (inputs[0]) inputs[0].placeholder = t.contactForm.name;
+          if (inputs[1]) inputs[1].placeholder = t.contactForm.email;
+          if (inputs[2]) inputs[2].placeholder = t.contactForm.subject;
+          if (form.querySelector("textarea"))
+            form.querySelector("textarea").placeholder = t.contactForm.message;
+          if (form.querySelector("button"))
+            form.querySelector("button").textContent = t.contactForm.send;
+        }
+        // Footer
+        setText(".footer-text p", t.footer);
+      }
+
+      document
+        .getElementById("lang-select")
+        .addEventListener("change", function (e) {
+          switchLanguage(e.target.value);
+        });
+      // Set default language on load
+      switchLanguage(document.getElementById("lang-select").value);
     </script>
   </body>
 </html>
